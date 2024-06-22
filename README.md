@@ -4,8 +4,11 @@ Welcome to NewsGram, a platform where you can post news anonymously and receive 
 
 ## Todo List
 - [x] Create a new project
-- [ ] Database setup
-- [ ] Deployment
+- [x] Database setup
+- [x] Deployment
+- [x] Models Creattion
+- [ ] API creation
+- [ ] API Testing
 - [ ] User authentication
 - [ ] News posting
 - [ ] AI assistance
