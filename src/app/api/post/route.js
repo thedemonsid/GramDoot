@@ -27,11 +27,12 @@ export async function GET() {
 }
 export async function POST(request) {
   try {
+    const body = await request.json();
     // Create a new post
     const post = await prisma.post.create({
       data: {
-        title: request.body.title,
-        content: request.body.content,
+        title: body.title,
+        content: body.content,
       },
     });
     // Check if the post was created
@@ -42,7 +43,7 @@ export async function POST(request) {
       });
     }
     return NextResponse.json({
-      message: "Post updated successfully",
+      message: "Post Added successfully",
       statusCode: 200,
       data: post,
     });
@@ -54,11 +55,12 @@ export async function POST(request) {
   }
 }
 export async function PUT(request) {
+  const body = await request.json();
   try {
     // Check if the post exists
     const existingPost = await prisma.post.findUnique({
       where: {
-        id: request.body.id,
+        id: body.id,
       },
     });
     if (!existingPost) {
@@ -70,11 +72,11 @@ export async function PUT(request) {
     // Update the post
     const post = await prisma.post.update({
       where: {
-        id: request.body.id,
+        id: body.id,
       },
       data: {
-        title: request.body.title,
-        content: request.body.content,
+        title: body.title,
+        content: body.content,
       },
     });
     return NextResponse.json({
@@ -91,11 +93,12 @@ export async function PUT(request) {
 }
 
 export async function DELETE(request) {
+  const body = await request.json();
   try {
     // Check if the post exists
     const existingPost = await prisma.post.findUnique({
       where: {
-        id: request.body.id,
+        id: body.id,
       },
     });
     if (!existingPost) {
@@ -107,7 +110,7 @@ export async function DELETE(request) {
     // Delete the post
     const post = await prisma.post.delete({
       where: {
-        id: request.body.id,
+        id: body.id,
       },
     });
     return NextResponse.json({
