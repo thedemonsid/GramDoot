@@ -10,6 +10,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.13.0",
     "@prisma/client": "^5.15.1",
     "next": "14.2.4",
     "react": "^18",
