@@ -67,8 +67,8 @@ We value your feedback and are here to assist you. If you have any questions, su
 Thank you for joining NewsGram! We hope you have a great experience sharing and reading news on our platform.`;
 function News() {
   return (
-    <NewsPage
-      headline={"Siddhesh Shrirame Becomes Youngest millionire"}
+    <NewsPage className 
+      headline={"Siddhesh Shrirame Becomes Youngest millionire" } 
       date={"2021-09-01"}
       source={"Times of India"}
       content={myContent}
