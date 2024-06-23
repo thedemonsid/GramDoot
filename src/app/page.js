@@ -1,3 +1,6 @@
+import NationalNewsHomepage from "@/components/NatNewscomponent";
 export default function Home() {
-  return <div className="text-center font-thin">Home Page</div>;
+  return <div>
+    <NationalNewsHomepage></NationalNewsHomepage>
+  </div>;
 }
